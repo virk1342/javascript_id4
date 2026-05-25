@@ -1,19 +1,22 @@
 const button = document.querySelector('button');
 const input = document.querySelector('input'); //why not #input? 
 const result = document.querySelector('#result');
+const weatherResult = document.querySelector('#weatherResult');
 
 
 
 
 //making a function which works when enter key is pressed while typing in input box
 
-input.addEventListener('keypress', clickfunction(event));
-//why we use input.addEventListener? because we want to listen for the keypress event on the input element, so we use input.addEventListener to add an event listener to the input element.
+input.addEventListener('keypress', clickfunction);
+//why we use input.addEventListener? because we want to listen for the keypress event on the input element,
+//  so we use input.addEventListener to add an event listener to the input element.
+
 function clickfunction(event) {
     //event.key is means which key was pressed, and if it is "Enter", then we will run the getWeather function.
 
 
-    if (event.key ==="enter")
+    if (event.key ==="Enter")
         console.log("enter key was presed");
     
     return getweather(); //
@@ -27,36 +30,17 @@ function clickfunction(event) {
 
 
 
+//getting value of city from input box and returning it from the function getweather
 
 
 async function getweather(){
 
     //
     //
-    const city = Input.value // .value works because cityInput is an input element, and .value gets the text inside the input box
+    const city = input.value // .value works because cityInput is an input element, and .value gets the text inside the input box
     //abcInput wont work because we didnt define abcInput, we defined cityInput, so we have to use cityInput.value to get the text from the input box
-       return city; 
-}
-
-// async function getWeather() {
-
-//   // Get text from input box
-//   const city = cityInput.value
-
-//   // If input is empty
-//   if (city === "") {
-
-//     // Show message
-//     weatherResult.innerHTML = "Please enter a city"
-
-//     // Stop function
-//     return
-//   }
 
 
-//using api key to get weather data from openweathermap
-//   const apiKey = "your_api_key_here"
-//   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
 
 
   const apiKey = "b2e5942bf5174a9fb7c104548262405"
@@ -87,11 +71,13 @@ async function getweather(){
     //how do we know how to get the temperature from the data? we can look at the API documentation to see the structure of the data that is returned.
 //how to look at the API documentation? we can go to the API website and look for the documentation,
 // which will show us how the data is structured and what information is available.
-    const temperature = data.current.temp_c
+    
+
+
+
+const temperature = data.current.temp_c
     weatherResult.innerHTML = `The temperature in ${city} is ${temperature}°C`
 
-    //now we have data , we just need to display it using inner html
+    //now we have data , we just need to display it using innerHTML to show the temperature in the weatherResult element.
 
-
-    document.querySelector('#weatherResult').innerHTML = `The temperature in ${city} is ${temperature}°C`
-  
+}

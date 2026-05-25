@@ -1,0 +1,121 @@
+/* Remove default spacing from browser */
+body {
+  margin: 0;
+
+  /* Add space inside body */
+  padding: 0;
+
+  /* Make background light blue */
+  background-color: #87ceeb;
+
+  /* Change font style */
+  font-family: Arial, sans-serif;
+
+  /* Put content in center */
+  display: flex;
+
+  /* Center left and right */
+  justify-content: center;
+
+  /* Center top and bottom */
+  align-items: center;
+
+  /* Full screen height */
+  height: 100vh;
+}
+
+/* Main white box */
+.container {
+
+  /* White background */
+  background-color: white;
+
+  /* Space inside box */
+  padding: 30px;
+
+  /* Rounded corners */
+  border-radius: 10px;
+
+  /* Shadow effect */
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+  /* Center text */
+  text-align: center;
+
+  /* Set width */
+  width: 300px;
+}
+
+/* Main heading */
+h1 {
+
+  /* Dark text color */
+  color: #333;
+}
+
+/* Input box */
+input {
+
+  /* Full width */
+  width: 100%;
+
+  /* Space inside input */
+  padding: 10px;
+
+  /* Space below input */
+  margin-bottom: 10px;
+
+  /* Include padding in width */
+  box-sizing: border-box;
+
+  /* Border around input */
+  border: 1px solid gray;
+
+  /* Rounded corners */
+  border-radius: 5px;
+}
+
+/* Button style */
+button {
+
+  /* Full width */
+  width: 100%;
+
+  /* Space inside button */
+  padding: 10px;
+
+  /* Green background */
+  background-color: green;
+
+  /* White text */
+  color: white;
+
+  /* Remove border */
+  border: none;
+
+  /* Rounded corners */
+  border-radius: 5px;
+
+  /* Mouse becomes pointer */
+  cursor: pointer;
+}
+
+/* Button hover effect */
+button:hover {
+
+  /* Darker green */
+  background-color: darkgreen;
+}
+
+/* Weather result box */
+#weatherResult {
+
+  /* Space above result */
+  margin-top: 20px;
+
+  /* Font size */
+  font-size: 18px;
+
+  /* Dark text */
+  color: #222;
+}

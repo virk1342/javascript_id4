@@ -20,7 +20,6 @@ async function GetMovie(){
     //cram this
     const response = await fetch(url);
     const data = await response.json();
-
 const movies = data.Search;
 
 

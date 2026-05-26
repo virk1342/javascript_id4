@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Price Tracker</title>
+
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: Arial;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #crypto-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .coinsDiv {
+      background: #222;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .coinsDiv h2 {
+      color: gold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Crypto Price Tracker</h1>
+
+  <!-- Coins will appear here -->
+  <div id="crypto-container"></div>
+
+  <!-- Link JS file -->
+  <script src="Crypto.js"></script>
+
+</body>
+</html>

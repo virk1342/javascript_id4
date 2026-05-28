@@ -96,4 +96,82 @@ TopRepos.forEach(repo => {
 
 
 //render profile
+// mtlb hun data nu screen te show krn da time agya
 
+const Newdiv = document.createElement('div');
+Newdiv.classList.add('profile');
+
+Newdiv.innerHTML = `<!-- user image -->
+
+    <img
+      src="${userData.avatar_url}"
+      width="120"
+    >
+
+
+
+    <!-- username -->
+
+    <h2>${userData.name}</h2>
+
+
+
+    <!-- bio -->
+
+    <p>${userData.bio}</p>
+
+
+
+    <!-- followers -->
+
+    <p>
+      Followers:
+      ${userData.followers}
+    </p>
+
+
+
+    <!-- following -->
+
+    <p>
+      Following:
+      ${userData.following}
+    </p>
+
+
+
+    <!-- public repos -->
+
+    <p>
+      Public Repositories:
+      ${userData.public_repos}
+    </p>
+
+
+
+    <!-- github profile link -->
+
+    <a
+      href="${userData.html_url}"
+      target="_blank"
+    >
+
+      Visit GitHub Profile
+
+    </a>
+
+`;
+
+
+
+
+/* =========================================================
+   SHOW PROFILE ON SCREEN
+   =========================================================
+
+   appendChild()
+   webpage te element add krda
+
+========================================================= */
+
+container.appendChild(Newdiv);

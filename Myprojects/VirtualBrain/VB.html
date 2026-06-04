@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Brain</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+    <link rel="stylesheet" href="VB.css">
+</head>
+<body>
+
+    <div id="app" class="container">
+
+        <header class="header">
+            <div class="logo-box">
+                <i class="ti ti-brain" aria-hidden="true"></i>
+            </div>
+            <div class="header-text">
+                <h1 class="app-title">Virtual Brain</h1>
+                <p class="app-subtitle">Record class → get notes → ask questions</p>
+            </div>
+        </header>
+
+        <section class="api-section">
+            <div class="api-row">
+                <input type="password" id="apiKeyInput" placeholder="Paste your Anthropic API key (sk-ant-...)">
+                <button class="btn" onclick="saveApiKey()">
+                    <i class="ti ti-device-floppy" aria-hidden="true"></i>
+                    Save key
+                </button>
+                <span class="api-saved" id="apiSaved">
+                    <i class="ti ti-check"></i> Saved!
+                </span>
+            </div>
+        </section>
+
+        <section class="record-section">
+            <p class="section-label">
+                <i class="ti ti-microphone" aria-hidden="true"></i>
+                Recording session
+            </p>
+            <div class="btn-row">
+                <button class="btn" id="recBtn" onclick="startRecording()">
+                    <span class="pulse-dot" id="recDot" style="display: none;"></span>
+                    <i class="ti ti-player-record" aria-hidden="true"></i>
+                    Start recording
+                </button>
+                <button class="btn btn-red" id="stopBtn" onclick="stopRecording()" disabled>
+                    <i class="ti ti-player-stop" aria-hidden="true"></i>
+                    Stop
+                </button>
+                <button class="btn btn-purple" id="genBtn" onclick="generateNotes()" disabled>
+                    <i class="ti ti-sparkles" aria-hidden="true"></i>
+                    Generate notes
+                </button>
+            </div>
+            <div class="status-line" id="statusLine">
+                <i class="ti ti-info-circle" aria-hidden="true"></i>
+                Ready to record your lecture
+            </div>
+            <div class="transcript-box" id="liveTranscript"></div>
+        </section>
+
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('notes', this)">Notes &amp; Summary</button>
+            <button class="tab" onclick="switchTab('chat', this)">Ask your professor</button>
+        </div>
+
+        <div class="panel active" id="panel-notes">
+            <div class="notes-box" id="notesBox"></div>
+        </div>
+
+        <div class="panel" id="panel-chat">
+            <div class="chat-history" id="chatHistory">
+                <div class="chat-empty" id="chatEmpty">
+                    <i class="ti ti-message-dots" aria-hidden="true"></i>
+                    <p>Record a lecture first, then ask questions about what was taught.</p>
+                </div>
+            </div>
+            <div class="chat-input-row">
+                <input type="text" id="chatInput" placeholder="Ask about today's lecture...">
+                <button class="btn btn-purple" onclick="sendChat()">
+                    <i class="ti ti-send" aria-hidden="true"></i>
+                    Ask
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="VB.js"></script>
+</body>
+</html>
